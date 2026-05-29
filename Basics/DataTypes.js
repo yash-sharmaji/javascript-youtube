@@ -12,3 +12,5 @@ let isLoggedIn = false
 
 // object 
 console.log(typeof "hitesh")
+console.log(typeof null) //gives obejct in return
+console.log(typeof undefined) //gives undefined in return 
