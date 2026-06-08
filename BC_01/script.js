@@ -63,3 +63,34 @@ console.log(students);
 
 let result = 1+2*3+4**2;
 console.log(result);
+
+
+
+
+// The 4th part of the video begins-->
+
+
+
+
+
+// How to accept user input 
+
+// 1. Easy Way = window prompt 
+// 2. Professional Way = HTML Textbox
+
+// let username;
+
+// username = window.prompt("whats your username");
+
+// console.log(username);
+
+
+// more professional way is through the text box
+
+
+document.getElementById("textinput").placeholder="username";
+document.getElementById("clickme").onclick = dosomething=()=>{
+    let username=null;
+    username = document.getElementById("textinput").value;
+    console.log(username);
+};
