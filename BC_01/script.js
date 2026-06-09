@@ -37,7 +37,8 @@ document.getElementById("para1").textContent = x;
 
 
 
-// The 3rd part now begins
+// The 3rd part now begins -->
+
 
 
 
@@ -97,14 +98,21 @@ document.getElementById("clickme").onclick = dosomething=()=>{
 
 
 
-
 /* The fifth part of the video begins here */
+
+
+
 
 /* change the type of a value to another */
 
-let age = window.prompt("How old are you?");
+// let age = window.prompt("How old are you?");
 
-age+=1;
+// age+=1;
 
-console.log(age); // this outputs 251 as string ke aage append hoga voh
+// console.log(age); // this outputs 251 as string ke aage append hoga voh
 
+document.getElementById("calculate").onclick = machine = () => {
+    let getradius = document.getElementById("radius").value;
+    let answer = 3.14 * getradius * getradius;
+    console.log(answer);
+}
