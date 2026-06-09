@@ -94,3 +94,17 @@ document.getElementById("clickme").onclick = dosomething=()=>{
     username = document.getElementById("textinput").value;
     console.log(username);
 };
+
+
+
+
+/* The fifth part of the video begins here */
+
+/* change the type of a value to another */
+
+let age = window.prompt("How old are you?");
+
+age+=1;
+
+console.log(age); // this outputs 251 as string ke aage append hoga voh
+
