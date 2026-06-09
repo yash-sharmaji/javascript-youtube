@@ -137,12 +137,33 @@ let count = 0 ;
 increaseBtn.onclick = function(){
     count++;
     countlabel.textContent = count;
-}
+};
+increaseBtn.onmousedown = () => {
+    timerId = setInterval(() =>{
+        count++;
+        countlabel.textContent=count;
+    },1000);
+};
+increaseBtn.onmouseup=()=>{
+    clearInterval(timerId);
+};
 
 decreaseBtn.onclick = function(){
     count--;
     countlabel.textContent = count;
-}
+};
+
+decreaseBtn.onmousedown = () => {
+    timerId = setInterval(() => {
+        count--;
+        countlabel.textContent = count;
+    }, 1000); // har 100ms me decrease
+};
+
+decreaseBtn.onmouseup = () => {
+    clearInterval(timerId);
+};
+
 
 resetBtn.onclick = function(){
     count=0;
