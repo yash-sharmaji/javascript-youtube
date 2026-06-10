@@ -40,3 +40,23 @@ MyButton.addEventListener("click",()=>{
     let randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
     MyLabel.textContent=randomNum;
 });
+
+
+// 10th part of the video begins here --->
+
+//IF statements - If a condition is true , execute some code
+//                or else do something else
+
+    // Just the basic knowledge hence not documented 
+
+
+
+
+
+// 11th part of the video begins here -->
+
+
+
+// .checked = property that determines the checked state of a 
+// HTML checkbox or radio button element
+
