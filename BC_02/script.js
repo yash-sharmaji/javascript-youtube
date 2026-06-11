@@ -198,4 +198,32 @@ console.log(phoneNumber);
 
 
 
-//
+
+// Added the 15th part of the video --->
+
+//string slicing = create a substring 
+//                 from a portion of another string 
+//                 string.slice(startindex,endindex)
+
+const fullName = "Bro Code";
+
+let firstName = fullName.slice(0 , 3); //outputs Bro as ending is exclusive
+// More dynamically , it can be done by this - 
+
+    let firstName2 = fullName.slice(0,fullName.indexOf(" "));
+
+    console.log(firstName2);
+
+
+// Negative index allows you start from the back like -
+// let secondendChar = fullName.slice(-2);
+
+// let endChar = fullName.slice(-1);
+// console.log(secondendChar);  //outputs de
+// console.log(endChar);        // outputs e
+// console.log(firstName);
+
+
+// if you only list the start index then all the indexes till end will get appeared there
+
+
