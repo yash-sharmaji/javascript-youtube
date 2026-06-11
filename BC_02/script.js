@@ -266,3 +266,45 @@ let firstName = fullName.slice(0 , 3); //outputs Bro as ending is exclusive
 
 
 
+// Added the 17th part of the video --->
+// The part actually contains only brief about the logical operators only
+
+
+//Added the 18th part of the video --->
+// Equality Operator -->
+    // = assignment operator
+    // == comparison operator
+    // === strict equaltiy operator (compare if values & datatypes are equal)
+    // != inequality operator
+    // !== strict inequality operator 
+//
+
+const PI = 3.14 ;
+
+if(PI == "3.14" ){
+    console.log("That is PI");
+}
+else{
+    console.log("That is not PI");   
+}
+
+// The above tells true as Number and String have not been compared
+// However ,using === will give false
+
+// While and for loop ho jayenge dont worry 🥱
+
+let loggedin =false;
+let username;
+let password;
+    username = window.prompt("Enter your username");
+    password = window.prompt("Enter you password");
+while(!loggedin){
+    if(username == "Myusername" && password=="Mypassword"){
+        loggedin = true;
+        console.log("You are logged in");
+    }
+    else{
+        console.log("Invalid Credentials! please try again");
+        break;
+    }
+}
