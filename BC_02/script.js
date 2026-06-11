@@ -110,3 +110,92 @@ submitBtn.addEventListener("click",()=>{
 // let greeting = time < 12 ? "You are early" : "You are late";
 
 // console.log(greeting);
+
+
+
+
+
+//Added the 13th part of the video-->
+
+
+
+let day = 5;
+
+switch(day){
+    case 1:
+        console.log("Monday");
+        break;
+
+    case 2:
+        console.log("Tuesday");
+        break;
+
+    case 3:
+        console.log("Wednesday");
+        break;
+
+    case 4:
+        console.log("Thrusday");
+        break;
+
+    default:
+        console.log("Din does not exist");
+        break;
+}
+
+
+//Added the 14th part of the video --->
+
+
+
+
+
+// string methods - allow you to mmanipulate and work with text (Strings)
+
+let userName = "Bro code    ";
+console.log(userName);
+
+// .character
+console.log(userName.charAt(0));
+
+// .length 
+console.log(userName.length);
+
+//.trim()
+console.log(userName.trim());
+console.log(userName.length);
+// even after trim , the length does not change thats because it is a separate variable
+
+// To check the first character of the userName 
+let result = userName.startsWith("B"); //returns a boolean
+console.log(result);
+
+// Above similar for the endswith()
+
+//.includes(" ")
+let result2  = userName.includes(" "); //returns a boolean
+
+if(result2){
+    console.log("Your username can't include ' '");
+}
+else{
+    console.log(userName);
+}
+
+// .replaceAll(" " ," ");
+
+let phoneNumber = "123-456-6789";
+
+phoneNumber=phoneNumber.replaceAll("-","");
+console.log(phoneNumber);
+
+// .padStart(20,"0")
+// This pads the number or string with a given character till the string is of 20 length
+//  There is similarly padEnd
+phoneNumber=phoneNumber.padStart(20,"0");
+
+console.log(phoneNumber);
+
+
+
+//
