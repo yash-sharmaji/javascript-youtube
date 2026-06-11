@@ -223,7 +223,46 @@ let firstName = fullName.slice(0 , 3); //outputs Bro as ending is exclusive
 // console.log(endChar);        // outputs e
 // console.log(firstName);
 
-
 // if you only list the start index then all the indexes till end will get appeared there
+
+
+
+// <---- IMPORTANTTTTT ---->
+// Added the 16th part of the video --->
+
+
+
+
+// Method Chaining - calling one method after another  
+//                   in one continuous line of code 
+
+
+// ---------- NO METHOD CHAINING --------
+
+
+// e.g. we have to make a username thing with first character uppercase and other to lowercases
+
+// let username = window.prompt("Enter your username: ");
+// username = username.trim();
+
+// let letter = username.charAt(0);
+// letter = letter.toUpperCase();
+
+// let extraChars = username.slice(1);
+// extraChars = extraChars.toLowerCase();
+// username = letter + extraChars;
+
+// console.log(username);
+
+
+// // ---------- METHOD CHAINING ---------- 
+// // let username2 = window.prompt("Enter your username: ");
+
+
+// username2 = username2.trim().charAt(0).toUpperCase() + username2.trim().slice(1).toLowerCase();
+// console.log(username2);
+
+
+
 
 
