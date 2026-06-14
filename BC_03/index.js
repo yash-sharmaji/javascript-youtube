@@ -110,3 +110,60 @@ console.log(`Your total is ${sum(...numbers)}`);
 // we used spread operator first to passs the main array as the separated elemenets 
 // and they would later combine to form the
 
+
+// Added the 30th part of the video --->
+
+
+
+
+
+// callback = a function that is passed as an argument to another function
+
+//            used to handle asynchronous operations :
+//            1. Reading a file
+//            2. Network requests
+//            3. Interacting with databases
+
+//            "Hey when you are done , call this next"
+
+// function hello(){
+//     setTimeout(function (){
+//         console.log("Hello!");
+//     },3000); //this makes the wait for 3 secs
+// }
+
+// function goodbye(){
+//     console.log("Goodbye!");
+// }
+// hello();
+// goodbye();
+
+// // What this will do is - ki phele goodbye print ho jayega and then 3 seconds tak hello function wait karega
+// // This is how , the setTimeout({
+// //                    },time); works
+
+
+function hello(callback){
+    console.log("Hello!");
+    callback();
+}
+
+function goodbye(){
+    console.log("GoodBye!");
+}
+function wait(){
+    console.log("Wait!");
+}
+// now in order to have a call back , what we do is - >
+//          hello(callback){
+//            callback();
+//          }
+// aise karte hai taki callback call ho jaye...
+
+
+hello(goodbye);
+hello(wait);
+// kind of like recursion hence not that qutie goodie goodie but but but , its good
+
+// KOi choti process phele na khtm ho jaye , yeh ensure karte hai hm log
+// This helps in overall that thing ... like process ko bad me execute karane ke liye
