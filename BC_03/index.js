@@ -214,3 +214,50 @@ function CapitalLetter(element,index,array){
 // It is useful when we are we have to apply one function to the entire array 
 
 
+
+
+// Added the 32nd part of the video
+
+
+
+
+// .map() = accepts a callback and applies the function to 
+//          each element of an array , then returns a new array
+
+
+const numbersss = [1,2,3,4,5];
+
+// numbersss.forEach(square);
+// numbersss.forEach(display);
+
+// function square(element,index,array){
+//     array[index]=Math.pow(element,2);
+// }
+
+// The above method is there , but we can also use the map for a better outcome tbh ->
+
+
+const squares = numbersss.map(square);
+squares.forEach(display);
+
+function square(element){
+    return Math.pow(element,2);
+}
+
+const cubes = numbersss.map(cube);
+cubes.forEach(display);
+
+function cube(element){
+    return Math.pow(element,3);
+}
+
+const dates = ["2024-1-10" ,"2025-4-20", "2026-3-12"];
+
+function formatDates(element){
+    const parts=element.split("-");
+    return `${parts[2]}/${parts[1]}/${parts[0]}`;
+}
+const formateddates = dates.map(formatDates);
+
+formateddates.forEach(display);
+
