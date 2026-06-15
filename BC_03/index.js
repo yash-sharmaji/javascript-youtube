@@ -167,3 +167,50 @@ hello(wait);
 
 // KOi choti process phele na khtm ho jaye , yeh ensure karte hai hm log
 // This helps in overall that thing ... like process ko bad me execute karane ke liye
+
+
+
+// Added the 31st part of the video --->
+
+
+
+
+
+// ForEach Method ---> method used to iterate over the elements
+//                     of an array and apply a specified function (callback)
+//                     to each element
+
+//                     array.forEach(callback)
+//                     element , index , array are provided
+
+let numberss = [1,2,3,4,5];
+
+numberss.forEach(display);
+
+function display(element){
+    console.log(element);
+}
+
+numberss.forEach(double);
+
+function double(element){
+    element = 2 * element;
+    console.log(element);
+}
+
+let fruits  = ["apple", "orange", "banana", "coconut"];
+
+fruits.forEach(uppercase);
+fruits.forEach(display);
+fruits.forEach(CapitalLetter);
+fruits.forEach(display);
+function uppercase(element,index,array){
+    array[index]=element.toUpperCase();
+}
+
+function CapitalLetter(element,index,array){
+    array[index]=element.charAt(0).toUpperCase() + element.slice(1);
+}
+// It is useful when we are we have to apply one function to the entire array 
+
+
