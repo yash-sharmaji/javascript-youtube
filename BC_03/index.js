@@ -293,3 +293,45 @@ adults.forEach(display);
 function isAdult(element){
     return element>=18;
 }
+
+
+
+// Addded the 34th part of the video --->
+
+
+
+//.reduce() = reduce the elements of an array to a single value
+
+const prices = [5,30,10,25,20];
+
+const total = prices.reduce(sum);
+
+console.log(`$${total.toFixed(2)}`);   // For calculating uptil 2 decimal places
+
+
+function sum(accumulator , element){
+    return accumulator + element;
+}
+// accumulator gets returned to us by this
+
+
+const grades = [75,90,80,65,95];
+
+const Maximum = grades.reduce(getMax);
+console.log(`The maximum grades are - ${Maximum}`);
+
+// function getMax(accumulator,element){
+//     if(element>accumulator){
+//         return element;
+//     }
+//     else{
+//         return accumulator;
+//     }
+// }
+
+function getMax(accumulator,element){
+    return Math.max(accumu)
+}
+// It can be proven useful when doing other things like 
+// selcting out from the whole array and likewise
+
