@@ -261,3 +261,35 @@ const formateddates = dates.map(formatDates);
 
 formateddates.forEach(display);
 
+
+
+// Added the 33rd part of the video
+
+
+
+
+
+//.filter() = creates a new array by filtering out element
+
+
+let numberssss = [1,2,3,4,5,6,7];
+let evenNums = numberssss.filter(isEven);
+
+function isEven(element){
+    return element%2 === 0;
+}
+
+evenNums.forEach(display);
+
+// This is a very useful method which can provide us
+//  with some things that are wanted out of the list or 
+// for a sort of the classification 
+
+const ages = [16,17,18,19,20,60];
+const adults = ages.filter(isAdult);
+
+adults.forEach(display);
+
+function isAdult(element){
+    return element>=18;
+}
