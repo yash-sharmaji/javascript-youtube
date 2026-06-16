@@ -330,8 +330,60 @@ console.log(`The maximum grades are - ${Maximum}`);
 // }
 
 function getMax(accumulator,element){
-    return Math.max(accumu)
+    return Math.max(accumulator);
 }
 // It can be proven useful when doing other things like 
 // selcting out from the whole array and likewise
+
+
+
+// Added the 35th part of the video --->
+
+
+
+// function declaration = define a reusable block of 
+//                        code that performs a specific task
+
+// function expression = a way to define functions 
+//                         as values or variables
+
+
+const printhello = function(){
+    console.log("Hello");
+}
+
+printhello();
+
+// setTimeout function --->
+//setTimeout(callback ,time);
+setTimeout(printhello,3000);
+
+
+// Veryyyy Important -> 
+//                      setTimeout(printhello(),3000);  this () means ki execute the function right now --> 
+//                      setTimeout(undefined,3000);
+
+
+// The above will print the hello as a callback from the printhello funtion in 3 seconds
+
+// We can also pass an expression in the place of the printhello / (callback)
+
+setTimeout(function(){
+    console.log("HEllO");
+},3000);
+
+
+const numberes = [1,2,3,4,5,6,7];
+
+const squaress = numbers.map(function(element){
+    return Math.pow(element,2);
+});
+
+console.log(squaress);
+
+const evenNumss = numbers.filter(function(element){
+    return element % 2 ===0;
+});
+
+console.log(evenNumss)
 
