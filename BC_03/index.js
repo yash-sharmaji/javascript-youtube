@@ -387,3 +387,43 @@ const evenNumss = numbers.filter(function(element){
 
 console.log(evenNumss)
 
+
+
+
+// Arrow Functions = a concise way to write function expression 
+//                   good for simple functions that you use only once 
+//                   (parameters) => some code
+
+
+// function hello(){
+//     console.log("Hello");
+// }
+
+// This is a not so badhiya 
+
+// const hello = function(){
+//     console.log("Hello");
+// }
+
+// This could be more concise actually 
+
+const hellooo = (name)=>{
+    console.log(`Hello ${name}`);
+}
+
+hellooo("Pihu");
+
+//setTimeout(hello,3000);
+
+// const hello = function(){
+//     console.log("Hello");
+// }
+
+setTimeout(()=>{
+    console.log("Hello");
+},3000);
+// const squares = numbers.map((element)=> Math.pow(element ,2));
+//const cubes = numbers.map((element) => Math.pow(element,3));
+
+// an arrow function is not required you to write the return keyword
+
