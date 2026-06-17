@@ -56,7 +56,8 @@ person2.sayHello();
 person1.sayHello();
 person1.eat();
 
-// In a browser's global execution context, this refers to the window object (unless you're in an ES module). Therefore, console.log(this) logs the window object, which contains many built-in properties and methods.
+// In a browser's global execution context, this refers to the window object (unless you're in an ES module). Therefore, 
+// console.log(this) logs the window object, which contains many built-in properties and methods.
 
 
 // The this keyword does not works with Arrow function , remember this very well ->
@@ -200,12 +201,21 @@ class Vehical{
         this.name=name;
         this.engine=engine;
     }
+
+    move(speed){
+        console.log(`This ${this.name} moves at a speed of ${speed}mph`)
+    }
 }
 
 class Car extends Vehical{
     constructor(name,engine,runspeed){
         super(name,engine);
         this.runspeed=runspeed;
+    }
+
+    run(){
+        console.log(`This ${this.name} runs `);
+        super.move(this.runspeed);
     }
 }
 
@@ -224,4 +234,69 @@ const car = new Car("Mcqueen","V8",100);
 
 console.log(car.name);
 
-console.log()
+car.run();
+
+// super can be used to refer to a parent class method too
+
+
+
+
+// Added the 44th video -->
+
+
+
+//Getters and Setters in Javascript 
+
+//Getters = special mmethod that makes a property readable
+//Setters = special mthod that makes a property writeable
+
+// validate and modify a value when reading/writing a property
+
+class Rectangle{
+    constructor(height,width){
+        this.height = height;
+        this.width = width;
+        
+        //as a constructor exists then this line becomes set width(width);
+
+    }
+
+    // We are required to write these for the width thing
+
+    set width(newWidth){
+        if(newWidth > 0){
+            this._width = newWidth;
+        }
+        else{
+            console.error("width must be a positive number");
+        }
+    }
+    set height(newheight){
+        if(newheight > 0){
+            this._height = newheight; // this.height is not used because 'this' itself calls the setter method...
+            //                             hence a rangerror pops , maximum call stack size exceeded
+            //                             No setter is attached to _width
+            //                             This doesnot mean private / It is for internal use onnly
+            
+        }
+        else{
+            console.error("height must be a positive number");
+        }
+    }
+
+    get width(){
+        return this._width;
+    }
+    get height(){
+        return this._height;
+    }
+}
+
+const rectangle = new Rectangle(3,4);
+rectangle.width = 2;
+rectangle.height=-100;
+// We need to avoid this bull crap
+
+console.log(rectangle.width);
+console.log(rectangle.height);
+
