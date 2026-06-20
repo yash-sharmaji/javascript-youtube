@@ -509,7 +509,7 @@ console.log(cards);
 
 
 const date = new Date ();
-
+// date.setDate(1);
 // Date (year, month, day, hour, minute, second, msecond)
 const date1 = new Date(2024,0,1,2,3,4,5);
 
@@ -533,3 +533,111 @@ console.log(month);
 
 // it is giving 5 in june cause it is military timing
 
+// comparisons can be done on the dates
+
+// const date1 = new Date("2023-12-31");
+// const date2 = new Date("2023-12-30");
+
+// if(date2>date1){
+//     console.log("Happy new year!");
+// }
+
+
+
+// added tthe 51th part of the video --->
+
+// closure =  A function defined inside of another function and 
+//              the inner function has access to the variables 
+//              and scope of the outer function . 
+//              Allow for private variables and state maintenace
+//              Used frequently in 35 frameworks: React , vue ,angular
+
+
+function outer(){
+
+    let message = "Hello";
+    function inner(){   
+        console.log(message);
+    }
+
+    inner();
+}
+
+outer();
+
+
+// state maintenance
+
+
+// function incremenet(){
+//     let count = 0;
+//     count++;
+//     operation();
+//     console.log(`Count increased to ${count}`);
+// }
+
+// incremenet();
+// incremenet();
+// incremenet();
+
+// due to reaignment of the count , the increment doesnt get past 1 
+
+// let count = 0;
+
+// count = 10000;
+
+// function increment(){
+//     count++;
+//     console.log(`Count increased to ${count}`);
+// }
+
+// increment();
+// increment();
+// increment();
+
+// but now no security for the count variable as it can be reassigned easily
+
+function createcounter(){
+    let count = 0;
+
+    function increment(){
+        count++;
+        console.log(`Count increased to ${count}`);
+    }
+
+    function getCount(){
+        return count;
+    }
+
+    return {increment,getCount};
+}
+
+const counter = createcounter(); // javasccript me closure ki wajah se increment apne parent variable ko yaad rakkhta hai
+
+counter.increment();
+counter.increment();
+
+console.log(counter.getCount());
+
+
+function createscore(){
+    let score =0; 
+    function increasescore(points){
+        score+=points;
+        console.log(`Added score is ${points}`)
+    }
+    function decreasescore(points){
+        score-=points;
+        console.log(`Decreased score is ${points}`)
+    }
+    function showpoints(){
+        return score;
+    }
+    return {increasescore,decreasescore,showpoints};
+}
+
+const game = createscore();
+
+game.increasescore(5);
+game.decreasescore(6);
+console.log(`The points scored in the game is ${game.showpoints()}`);
