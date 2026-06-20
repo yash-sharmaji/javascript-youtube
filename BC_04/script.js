@@ -366,7 +366,170 @@ function displayPerson({firstName,lastName,age,job="Unemployed"}){
     console.log(`job: ${job}`);
 }
 displayPerson(person1);
+const person = {
+    fullname : "spongebob sqaurepants",
+    age : 30, 
+    hobbies : ["karate", "jellyfishing","cooking"],
+    address : {
+        street : "221B Baker Street",
+        city : "London",
+        country : "India",
+    },
+    isStudent : false,
+}
+
+// we can output the address in format using this -->
+for(const property in person.address){
+    console.log(person.address[property]);
+}
+
+//  How to make a constructor for a nested object --- >
+
+class Personn{
+    constructor(name,age,...address){
+        this.name=name;
+        this.age=age;
+        this.address = new Address(...address);
+    }
+}
+
+class Address{
+    constructor(street,city,country){
+        this.street=street;
+        this.city=city;
+        this.country = country;
+    }
+}
+//Address object is the child object of the Person object initialised in Personn object
+
+// const person11 = new Personn("Yash",18, "124 Conch St.",
+//                                         "Bikini Bottom",
+//                                         "Int. waters");
 
 
 
+// Added the 47th part of the video --->
+
+
+
+// Array of Objects --->     
+
+
+const fruit =[
+    {name:"apple",color:"red",calories: 95},
+    {name:"pineapple",color:"blue",calories: 100},
+    {name:"jam",color:"green",calories: 80},
+];
+
+// map-->
+
+const fruitname = fruit.map(item=> item.name);
+const fruitcolor = fruit.map(item => item.color);
+
+console.log(fruitname);
+
+// filter()-->
+
+const yellowFruits = fruit.filter(fruit => fruit.color ==="yellow");
+const lowcalFruits = fruit.filter(fruit => fruit.calories < 90);
+
+console.log(lowcalFruits);
+
+// reduce()-->
+
+const maxfruit = fruit.reduce((accumulator,element)=> element.calories>accumulator.calories ?  element : accumulator);
+console.log(maxfruit);
+
+
+//Added the 48th part of the video --->
+
+
+// sort() = method used to sort elements of an array in place
+//          sorts elements as string in lecicographical order
+//          lexicograpghic = (alphabets + numbers + symbols) as strings
+
+let newnumbers = [1,10,9,3,5,2,7];
+
+// if you write only this - sort() then->
+// in javascript , the numbers are converted to strings and compared likewise , therefore -> 1,10,9,7,5,3,2 aayega
+
+newnumbers.sort((a,b)=>a-b);
+console.log(newnumbers);
+
+/* this rule is already built in in javascript --->
+    If comparison result < 0
+    keep a before b
+
+    If comparison result > 0
+        put b before a
+
+    If comparison result == 0
+        keep them equal */
+
+const fruitss =[
+    {name:"apple",color:"red",calories: 95},
+    {name:"pineapple",color:"blue",calories: 100},
+    {name:"jam",color:"green",calories: 80},
+];
+
+fruitss.sort((a,b)=>a.calories - b.calories);
+fruitss.sort((a,b)=> a.name.localeCompare(b.name)); //ulta karne ke liye b bahar
+
+console.log(fruitss);
+
+
+// Shuffle an array ->
+
+const cards = ['A',2,3,4,5,6,7,8,9,10,'J','K','Q'];
+
+// cards.sort(()=> Math.random()-0.5); // this is an highlt inefficient method 
+
+
+// Fisher-Yates Algorithm --->
+
+function shuffle(array){
+    for(let i=array.length-1 ; i > 0; i--){
+
+        const random = Math.floor(Math.random()*(i+1));
+        [array[i],array[random]] = [array[random],array[i]];
+
+    }
+}
+shuffle(cards);
+console.log(cards);
+
+
+//Added the 50th part of the video --->
+
+
+
+// Date Objects = Objects that contain values that represent dates and times . 
+//                These date objects can be changed and formatted
+
+
+
+const date = new Date ();
+
+// Date (year, month, day, hour, minute, second, msecond)
+const date1 = new Date(2024,0,1,2,3,4,5);
+
+const date2 = new Date("2024-01-02T12:00:00Z")
+console.log(date);
+
+const date3 = new Date(0); 
+// this will give the 1970 decemeber something time ,the 0 signifies the time from that great day
+
+console.log(date3);
+
+const date4 = new Date();
+
+const year = date4.getFullYear();
+const month = date4.getMonth();
+const hour = date.getHours();
+const minutes = date.getMinutes();
+
+console.log(year);
+console.log(month); 
+
+// it is giving 5 in june cause it is military timing
 
