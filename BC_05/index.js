@@ -117,7 +117,7 @@ func1(func2);
 
 
 document.title = "MeriMarzi";
-document.body.style.backgroundColor = "hsl(0,0%,15%)"; // even if no css is written , we were able to change the background color 
+//document.body.style.backgroundColor = "hsl(0,0%,15%)"; // even if no css is written , we were able to change the background color 
 
 console.dir(document);
 console.log(document);
@@ -128,4 +128,208 @@ const welcomeMsg = document.getElementById("welcome-msg");
 welcomeMsg.textContent += username === "" ? " Guest" : username;
 
 
+//Added till 60th part of the video --->
+
+
+//Element selectors = Methods used to target and manipulate HTML elements. 
+//                    They allow you to select one or multiple HTML elements 
+//                    from the DOM (Document Object Model)
+
+// 1. document.getElementbyId()    //Element or null
+// 2. document.getElementsClassName()   // HTML Collection
+// 3. document.getElementsByTagName()  // HTML Collection
+// 4. document.querySelector()    // Element or Null
+// 5. document.querySelectorAll()   // Nodelist
+
+const myheading = document.getElementById("my-heading");
+
+myheading.style.backgroundColor = "yellow";
+myheading.style.textAlign = "center";
+
+console.log(myheading);
+
+const fruits = document.getElementsByClassName("fruits");
+
+// console.log(fruits);
+
+fruits[0].style.backgroundColor="yellow";
+
+for(let fruit of fruits){
+    fruit.style.backgroundColor="yellow";
+}
+
+// There are two types of for loop [for...in...] and [for...of...]
+
+// for in - iterates over enumerable property names . not just numeric indexes
+// for of - iterates over document model objects 
+// ✅ for...of → Arrays, strings, NodeList, Map, Set, and other iterables. This is the preferred choice when you want the items.
+// ✅ for...in → Plain objects, when you want their property names. this prints the indexes
+
+
+
+Array.from(fruits).forEach(fruit => {
+    fruit.style.backgroundColor="yellow";
+});
+
+/* What does Array.from() do?
+Array.from(fruits)
+
+takes the NodeList (this .from() - it works on any iterable or array-like object into a real JS array) and creates a new Array.
+
+NodeList
+   │
+   ▼
+Array.from()
+   │
+   ▼
+Real Array
+
+Now you have:
+
+[
+    <p>Apple</p>,
+    <p>Banana</p>,
+    <p>Mango</p>
+] */
+
+
+// document.getElementbyTagName()   //HTML Collection
+
+// take all matches in our html document and stick them all in a html collection
+
+const h4Elements = document.getElementsByTagName("h4");
+
+console.log(h4Elements);
+
+// access through indexing
+
+//same like above
+
+Array.from(h4Elements).forEach(h4Elements => {
+    h4Elements.style.textAlign="center";
+});
+
+
+//Queryselector will return the first matching element or null (if not found) --->
+
+const element = document.querySelector("li"); //for class name use . 
+// for tag name use nothing
+// for id use # like css only
+
+element.style.backgroundColor = "yellow";
+// only beets get highlighted as it is the first element with li
+
+
+
+// document.queryselectorAll() - This returns a node list - similar to html collection which has built in methods 
+//                              like an array
+//                              but they are static not live like array
+//                              they do not update automatically in DOM like arrays do
+
+
+const foods1 = document.querySelectorAll(".fruits");
+
+foods1[0].style.background = "yellow";
+
+// html collection me built in foreach method nahi hoti , unlike nodelists ... therefore they have it
+
+const foods = document.querySelectorAll("li");
+console.log(foods);
+
+
+// foods.forEach(food=>{
+//     food.style.backgroundColor = "yellow";
+// });
+
+
+
+// Added the 61st part of the video --->
+
+
+// DOM Navigation = The process of navigating through the structure 
+//                  of an HTML document using JavaScript
+
+// .first/.lastElementChild 
+// .next/.previousElementSibling
+// .parentElement
+// .children
+
+// Its simple as fuck , just watch the 15 mins
+
+const ulElements = document.querySelectorAll("ul");
+
+ulElements.forEach(ulElements => {
+    const firstChild = ulElements.firstElementChild;
+    firstChild.style.backgroundColor="yellow";
+});
+
+
+
+// next/previous element sibling -->
+
+const element1 = document.getElementById("Apple");
+const nextsibling = element1.nextElementSibling;
+
+// Last element select kare toh kya hoga ... Null return krega ... -->
+
+
+// parent ke case me li ki id loge aur parent access karoge tohh ul acess hoga simple
+
+// html -> body ->ul ->li ... every element has a parent . but if not then it is null outputting
+
+// only .children returns an Html collection , the other return a single element or null
+
+const element2 = document.getElementById("vegetables");
+const children = element2.children;
+
+console.log(Array.from(children));
+
+
+//Added the 62nd part of the video --->
+
+
+// ------- Example 1 <h1> -------
+
+//Step 1 create the element
+
+const newH1 = document.createElement("h1");
+
+//Step 2 Add Attributes/Properties
+
+newH1.textContent = "I like Pizza!"
+newH1.id = "myH1";
+newH1.style.color = "tomato";
+newH1.style.textAlign = "center";
+
+//Step3 Append element to DOM
+
+//document.body.append(newH1); //when you append an element then that element is the last child
+// document.body.prepend(newH1);
+const box1 = document.getElementById("Box1");
+Box1.append(newH1);
+
+// const box2 = document.getElementById("Box2");
+// document.body.insertBefore(newH1,box2);  //(current element,box)
+
+// const boxes = document.querySelectorAll(".box");
+// document.body.insertBefore(newH1,boxes[2]);
+
+//Remove HTML Element
+document.Box1.removChild(newH1);
+
+
+// adding a list item for that vegetable one --->
+
+//Step 1 Create the element 
+
+const newlistitem = document.createElement("li");
+
+//Step 2 Add attributes/Properties
+
+newlistitem.textContent="coconut";
+newlistitem.style.fontSize="2em";
+newlistitem.style.backgroundColor="yellow";
+
+
+document.body.append(newlistitem);
 
