@@ -306,7 +306,7 @@ newH1.style.textAlign = "center";
 //document.body.append(newH1); //when you append an element then that element is the last child
 // document.body.prepend(newH1);
 const box1 = document.getElementById("Box1");
-Box1.append(newH1);
+box1.append(newH1);
 
 // const box2 = document.getElementById("Box2");
 // document.body.insertBefore(newH1,box2);  //(current element,box)
@@ -315,8 +315,7 @@ Box1.append(newH1);
 // document.body.insertBefore(newH1,boxes[2]);
 
 //Remove HTML Element
-document.Box1.removChild(newH1);
-
+box1.removeChild(newH1);
 
 // adding a list item for that vegetable one --->
 
@@ -332,4 +331,61 @@ newlistitem.style.backgroundColor="yellow";
 
 
 document.body.append(newlistitem);
+
+
+// eventListener = listen for specific events to create interactive web pages- 
+//                 events: click , mouseover , mouseout 
+//                 .addEventListener(event,callback);
+
+
+
+const Boxy = document.getElementById("myBox");
+
+function changeColor(event){
+    Boxy.style.backgroundColor = "yellow";
+    // Boxy.classList.toggle("yellow");
+    // Boxy = event.target
+
+    event.target.style.backgroundColor = "tomato";
+    event.target.textContent = "Ouch";
+}
+// event is an objecct that is passed to us behind the scenes
+
+
+// myBox.addEventListener("event",callback);
+// Boxy.addEventListener("click",changeColor);
+
+// Arrow functions are also allowed over here , or we even pass the function explicitly here directly
+
+myBox.addEventListener("click" , () =>{
+    event.target.style.backgroundColor = "tomato";
+    event.target.textContent= "ocuh";
+})
+
+// here we are not explicitly passing the event as a parameter to the arrow function but it work still sometime 
+// because browser expose window.event behind the scenes , sometimes so , this is effectively using window.event 
+// but this is a bad practice 
+
+// this is a good practice ->
+myBox.addEventListener("click" , () =>{
+    myBox.style.backgroundColor = "tomato";
+    myBox.textContent= "ocuh";
+})
+
+myBox.addEventListener("click" , event =>{
+    event.target.style.backgroundColor = "tomato";
+    event.target.textContent= "ocuh";
+})
+
+myBox.addEventListener("mouseover" , event =>{
+    event.target.style.backgroundColor = "green";
+    event.target.textContent= "Fuck me";
+})
+
+
+myBox.addEventListener("mouseout" , event =>{
+    event.target.style.backgroundColor = "tomato";
+    event.target.textContent= "AAAhh ";
+})
+
 

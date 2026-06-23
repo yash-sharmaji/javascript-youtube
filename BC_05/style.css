@@ -1,4 +1,20 @@
+*{
+    box-sizing: border-box;
+}
+
 .box{
     width: 800px;
     border: solid black;
+}
+#myBox{
+    border: solid ;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px;
+}
+.yellow{
+    background-color: yellow;
 }
