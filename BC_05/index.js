@@ -388,4 +388,61 @@ myBox.addEventListener("mouseout" , event =>{
     event.target.textContent= "AAAhh ";
 })
 
+// Added the 64th part of the video --->
+
+
+// eventListener = Listen for specific events to create interactive web pages
+//                  events : keyup , keydown
+//                  document.addEventListener(event,callback);
+
+
+// document.addEventListener("keydown", event => {
+//     console.log(`keydown = ${event.key}`);
+// });
+// document.addEventListener("keyup",event=>{
+//     console.log(`keyup = ${event.key}`);
+// })
+
+// we have arrow keys as well
+// we are going to move our myBox from upper code only --->
+const moveAmount = 10;
+let x =0;
+let y =0;
+
+document.addEventListener("keydown",event =>{
+    if(event.key.startsWith("Arrow")){
+        switch(event.key){
+            case "ArrowUp" :
+                y -= moveAmount;
+                break;
+            case "ArrowDown" :
+                y+= moveAmount;
+                break;
+            case "ArrowLeft" :
+                x -= moveAmount;
+                break;
+            case "ArrowRight" :
+                x += moveAmount;
+        }
+        myBox.style.top = `${y}px`;
+        myBox.style.left = `${x}px`;
+    }
+    console.log(event.key);
+});
+const myButton = document.getElementById("myButton");
+
+const myImg =document.getElementById("myImg");
+
+myButton.addEventListener("click",event=>{
+    
+    if(myButton.textContent=="Hide"){
+        myImg.style.visibility="hidden";
+        myButton.textContent="Show";
+    }
+    else if(myButton.textContent=="Show"){
+        myImg.style.visibility="visible";
+        myButton.textContent="Hide";
+    }
+});
+
 
