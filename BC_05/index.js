@@ -331,7 +331,7 @@ newlistitem.style.backgroundColor="yellow";
 
 
 document.body.append(newlistitem);
-
+document.body.removeChild(newlistitem);
 
 // eventListener = listen for specific events to create interactive web pages- 
 //                 events: click , mouseover , mouseout 
@@ -446,3 +446,62 @@ myButton.addEventListener("click",event=>{
 });
 
 
+// Added the 66th part of the video ---->
+
+// Nodelist = static collection of Html elements by (id , class , element)
+//            Can be created by using querySelectorAll()
+//            Similar to an array , but no (map ,filter,reduce) i.e. built-in methods for helping
+//            Nodelists wont update to automatically reflect changes
+
+// A static collection is a snapshot of the DOM at the moment you query it. 
+// A dynamic (live) collection automatically updates when the DOM changes.
+
+// suppose we get a nodelist from the query selector but now , the static collection is updated by appending something as well , i want that to be requery selecction
+
+let buttons = document.querySelectorAll(".myBtn");
+
+buttons.forEach(button =>{
+    button.addEventListener("click", event =>{
+    event.target.style.backgroundColor="tomato";
+    });
+});
+
+const newButton = document.createElement("button");
+newButton.textContent="Button 5";
+newButton.classList="myBtn";
+
+document.body.appendChild(newButton);
+
+console.log(buttons); // This will give 4 buttons only ... we have to manually add 5th one by doing querySelector again
+
+buttons = document.querySelectorAll(".myBtn");
+
+console.log(buttons);
+
+buttons.forEach(button =>{
+    button.addEventListener("click", event =>{
+    event.target.style.backgroundColor="tomato";
+    });
+});
+
+// Remove an element
+
+buttons.forEach(button => {
+    button.addEventListener("click",event=>{
+        event.target.remove();
+        // console.log(buttons);
+        buttons = document.querySelectorAll(".myButtons");
+        console.log(buttons);
+    });
+});
+
+
+// ClassList = Element property in javascript used to interact 
+//             with an element's list of classes (CSS classes)
+//             Allows you to make reusable classes for any elements 
+//             accross your webpage
+
+// add()
+// remove()
+// toggle(Remove if present , add if not)
+// contains()
