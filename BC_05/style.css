@@ -20,6 +20,21 @@
     background-color: yellow;
 }
 
-#myButton{
+#myButton1{
     font-size: 2rem;
+    margin: 10px;
+    border : none;
+    border-radius : 5px;
+    padding: 10px 15px;
+}
+.enabled{
+    background-color: aqua;
+}
+.hover{
+    background-color: aliceblue;
+}
+
+.disabled{
+    background-color: aquamarine;
+    color: greenyellow;
 }

@@ -490,7 +490,7 @@ buttons.forEach(button => {
     button.addEventListener("click",event=>{
         event.target.remove();
         // console.log(buttons);
-        buttons = document.querySelectorAll(".myButtons");
+        buttons = document.querySelectorAll(".myBtn");
         console.log(buttons);
     });
 });
@@ -505,3 +505,26 @@ buttons.forEach(button => {
 // remove()
 // toggle(Remove if present , add if not)
 // contains()
+
+const myButton1 = document.getElementById("myButton1");
+
+myButton1.classList.add("enabled");
+myButton1.classList.remove("enabled");
+
+myButton1.addEventListener("mouseover",event=>{
+    event.target.classList.add("hover");
+});
+
+myButton1.addEventListener("mouseout", event =>{
+    event.target.classList.remove("hover");
+});
+
+// we can also do a toogle in place of both add and remove
+
+// replace can be done easily...
+
+//contains() check if it contains the class
+
+// Using query selector all and similarly the same classes can be reassigned to things
+
+
