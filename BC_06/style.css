@@ -1,0 +1,12 @@
+#dataDisplay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: auto;
+
+}
+#dataDisplay img{
+    height: 200px;
+    width: auto;
+}
